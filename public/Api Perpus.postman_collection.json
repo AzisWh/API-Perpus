@@ -1,0 +1,502 @@
+{
+	"info": {
+		"_postman_id": "b4d91e29-2836-4788-b8dd-fe0f0bdf278c",
+		"name": "Api Perpus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24623692"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Mhs",
+					"item": [
+						{
+							"name": "Login Mhs",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nama\" : \"Mhs 1\",\r\n    \"nim\": \"123456789\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/loginMhs",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"loginMhs"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "petugas",
+					"item": [
+						{
+							"name": "Login Petugas",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"petugas@gmail.com\",\r\n    \"password\" : \"petugas@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/loginPetugas",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"loginPetugas"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "get petugas",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/petugas",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"petugas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get mhs",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/mhs",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"mhs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "buku",
+			"item": [
+				{
+					"name": "add buku",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kategori\": \"Fiksi\",\r\n    \"judul\": \"TEST TEST\",\r\n    \"tahun_terbit\": 2001,\r\n    \"jumlah_buku\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/buku",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"buku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit buku",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"kategori\": \"Fiksi\",\r\n    \"judul\": \"mas her\",\r\n    \"tahun_terbit\": 2001,\r\n    \"jumlah_buku\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/buku/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"buku",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get buku",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/buku",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"buku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/buku/2",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"buku",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "petugas",
+			"item": [
+				{
+					"name": "peminjaman",
+					"item": [
+						{
+							"name": "get all peminjaman",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/peminjaman",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"peminjaman"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get peminjaman by id mhs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/peminjaman/mahasiswa/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"peminjaman",
+										"mahasiswa",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"acc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/update-status/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"update-status",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "pengembalian",
+					"item": [
+						{
+							"name": "get all pengembalian",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/pengembalian",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"pengembalian"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get pengembalian by id mhs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/pengembalian/mahasiswa/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"pengembalian",
+										"mahasiswa",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update status",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"status\": \"acc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/acc-pengembalian/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"acc-pengembalian",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "add mhs",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nama\": \"Mhs 1\",\r\n  \"nim\": \"123456789\",\r\n  \"fakultas\": \"Fakultas Teknik\",\r\n  \"alamat\": \"Semarang\",\r\n  \"jenis_kelamin\": \"Laki-laki\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/add-mahasiswa",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"add-mahasiswa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "mhs",
+			"item": [
+				{
+					"name": "pinjam buku",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_mahasiswa\": 1,\r\n    \"id_buku\": 1,\r\n    \"fakultas\": \"teknik\",\r\n    \"nim\": \"123456\",\r\n    \"tanggal_peminjaman\": \"2024-01-01\",\r\n    \"tanggal_pengembalian\": \"2024-01-10\",\r\n    \"status\": \"menunggu acc\",\r\n    \"created_at\": \"2024-01-01T00:00:00.000000Z\",\r\n    \"updated_at\": \"2024-01-01T00:00:00.000000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pinjam-buku",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pinjam-buku"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pengembalian",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "pengembalian",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id_peminjaman_buku\": 1,\r\n  \"tanggal_pengembalian\": \"2024-12-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/pengembalian-buku",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"pengembalian-buku"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
